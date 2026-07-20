@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Time Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        <h2>Loading Dashboard...</h2>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <h1 class="logo">🌍 TimeDash</h1>
+            <div class="search-container" style="position: relative;">
+                <input type="text" id="search-bar" placeholder="Search any global city (e.g. Rome, Seoul)..." autocomplete="off">
+                <!-- NEW: Search Results Dropdown -->
+                <div id="search-results" class="search-dropdown glass hidden"></div>
+            </div>
+            <button id="theme-toggle" class="btn glass-btn">🌙 Dark Mode</button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+            <h2 id="greeting-message">Good Morning</h2>
+            <p id="local-date" class="date-text"></p>
+            <div id="digital-clock" class="large-clock text-gradient"></div>
+        </div>
+        
+        <!-- ANALOG CLOCK -->
+        <div class="analog-clock-container glass">
+            <div class="clock">
+                <div class="hand hour" id="hour-hand"></div>
+                <div class="hand minute" id="minute-hand"></div>
+                <div class="hand second" id="second-hand"></div>
+                <div class="center-dot"></div>
+                <span class="number num1">1</span><span class="number num2">2</span>
+                <span class="number num3">3</span><span class="number num4">4</span>
+                <span class="number num5">5</span><span class="number num6">6</span>
+                <span class="number num7">7</span><span class="number num8">8</span>
+                <span class="number num9">9</span><span class="number num10">10</span>
+                <span class="number num11">11</span><span class="number num12">12</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- FAVORITES SECTION -->
+        <section id="favorites-section">
+            <h2 class="section-title">⭐ Favorites (Max 5)</h2>
+            <div id="favorites-grid" class="cards-grid">
+                <p id="no-favorites-msg">No favorites added yet.</p>
+            </div>
+        </section>
+
+        <!-- CALCULATOR SECTION -->
+        <section id="calculator-section" class="glass calc-card">
+            <h2 class="section-title">⏱️ Time Difference Calculator</h2>
+            <p style="margin-bottom: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                *Search and add cities to the dashboard to compare them here.
+            </p>
+            <div class="calc-controls">
+                <select id="calc-country-1" class="glass-input"></select>
+                <span>vs</span>
+                <select id="calc-country-2" class="glass-input"></select>
+                <button id="calc-btn" class="btn primary-btn">Calculate</button>
+            </div>
+            <p id="calc-result" class="calc-result">Select two regions to see the time difference.</p>
+        </section>
+
+        <!-- ACTIVE CLOCKS -->
+        <section id="world-section">
+            <h2 class="section-title">🌐 Active Clocks</h2>
+            <div id="world-grid" class="cards-grid">
+                <!-- World cards injected here dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts (Notice data.js is gone!) -->
+    <script src="script.js"></script>
+</body>
+</html>
